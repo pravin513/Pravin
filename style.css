@@ -1,0 +1,100 @@
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Segoe UI, monospace;
+  background:radial-gradient(circle at top,#1a0033,#000);
+  color:#ff4d4d;
+  text-align:center;
+  overflow:hidden;
+}
+
+/* Tap */
+#tapStart{
+  position:fixed; inset:0;
+  background:linear-gradient(135deg,#ff0000,#ff9900,#ff0000);
+  color:#fff;
+  display:flex; flex-direction:column;
+  justify-content:center; align-items:center;
+  z-index:9999;
+  animation:pulseStart 1.4s infinite;
+}
+@keyframes pulseStart{0%{filter:brightness(1)}50%{filter:brightness(1.4)}100%{filter:brightness(1)}}
+
+/* Toast */
+#toast{
+  position:fixed; top:-60px; left:50%;
+  transform:translateX(-50%);
+  background:linear-gradient(90deg,#ff0033,#ff9900);
+  color:#fff; padding:10px 16px; border-radius:12px;
+  box-shadow:0 8px 30px rgba(0,0,0,.6);
+  z-index:9998; transition:top .5s;
+}
+#toast.show{ top:12px; }
+
+/* Main */
+#lockScreen{
+  max-width:420px; margin:22px auto; padding:20px;
+  border-radius:18px;
+  background:linear-gradient(180deg,#140022,#000);
+  box-shadow:0 0 25px #ff0033,inset 0 0 20px #330000;
+  animation:shakeSoft .2s infinite;
+}
+@keyframes shakeSoft{0%{transform:translate(1px,1px)}50%{transform:translate(-1px,-1px)}100%{transform:translate(1px,-1px)}}
+
+/* RGB Police Sweep */
+.policeLight{
+  animation:policeFlash .6s infinite;
+}
+@keyframes policeFlash{
+  0%{box-shadow:0 0 35px red}
+  25%{box-shadow:0 0 35px blue}
+  50%{box-shadow:0 0 35px red}
+  75%{box-shadow:0 0 35px blue}
+  100%{box-shadow:0 0 35px red}
+}
+
+/* Android lock */
+#androidLock{color:#fff}
+.time{font-size:56px; font-weight:700; text-shadow:0 0 10px #00ffff}
+#swipeArea{font-size:14px; color:#00ffff; animation:up 1.2s infinite}
+@keyframes up{0%{transform:translateY(6px)}50%{transform:translateY(-6px)}100%{transform:translateY(6px)}}
+#swipeError{font-size:13px; color:#ff0033; text-shadow:0 0 6px #ff0033}
+
+/* Text */
+h1{color:#ff0033; text-shadow:0 0 12px #ff0033,0 0 22px #ff0033}
+#fakeData p{color:#ffb3b3; text-shadow:0 0 6px #ff0033}
+
+/* Override */
+#overrideBox{margin-top:10px; color:#ffcc00}
+.bar{width:100%; height:12px; background:#222; border-radius:10px; overflow:hidden}
+.fill{width:0%; height:100%; background:linear-gradient(90deg,#ff0000,#ffff00); transition:width .4s}
+
+/* Panic */
+.panic{animation:bgFlash .7s infinite}
+@keyframes bgFlash{0%{background:#000}50%{background:#330000}100%{background:#000}}
+.shakeHard{animation:shakeHard .08s infinite}
+@keyframes shakeHard{0%{transform:translate(4px,4px)}50%{transform:translate(-4px,-4px)}100%{transform:translate(4px,-4px)}}
+
+/* Fingerprint */
+.fp-circle{
+  width:90px; height:90px; border-radius:50%;
+  border:3px solid #ff0033; box-shadow:0 0 15px #ff0033;
+  margin:auto; animation:fingerPulse 1s infinite
+}
+@keyframes fingerPulse{0%{transform:scale(1);opacity:.5}50%{transform:scale(1.3);opacity:1}100%{transform:scale(1);opacity:.5}}
+
+/* Countdown */
+#countdown{font-size:22px; color:#ffff00; text-shadow:0 0 10px #ffff00}
+
+/* Confetti */
+#confettiLayer{position:fixed; inset:0; pointer-events:none}
+.confetti{
+  position:absolute; font-size:22px; animation:fall 1.6s linear forwards;
+}
+@keyframes fall{
+  from{transform:translateY(-20px) rotate(0deg); opacity:1}
+  to{transform:translateY(100vh) rotate(360deg); opacity:0}
+}
+
+.green{color:#00ff66; text-shadow:0 0 10px #00ff66,0 0 20px #00ff66}
+.hidden{display:none}
