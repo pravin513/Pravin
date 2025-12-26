@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Critical Security Alert</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- TAP TO START -->
+<div id="tapStart">
+  <h2>🚨 SECURITY CHECK 🚨</h2>
+  <p>Tap to continue</p>
+    <h3>pravin kewat द्वारा बनाया गया है</h3>
+</div>
+
+<audio id="siren" preload="auto" loop>
+  <source src="siren.mp3" type="audio/mpeg">
+</audio>
+
+<!-- FAKE NOTIFICATION TOAST -->
+<div id="toast" class="hidden">
+  🔔 System Alert: Unauthorized access detected
+</div>
+
+<div id="lockScreen">
+
+  <div id="androidLock">
+    <div class="time" id="timeNow">12:00</div>
+    <div class="date">Jan 1</div>
+    <div id="swipeArea">▲ Swipe up to unlock</div>
+    <div id="swipeError" class="hidden">❌ Too many attempts – Device Locked</div>
+  </div>
+
+  <h1 id="title">🚨 CRITICAL SECURITY ALERT 🚨</h1>
+  <p id="message">Initializing deep security scan...</p>
+
+  <div id="fakeData">
+    <p id="cam">📸 Camera: Pending</p>
+    <p id="imei">🔐 IMEI: Checking</p>
+    <p id="otp">🔢 OTP Scan: Active</p>
+  </div>
+
+  <!-- SYSTEM OVERRIDE -->
+  <div id="overrideBox" class="hidden">
+    <p>⚠️ SYSTEM OVERRIDE IN PROGRESS</p>
+    <div class="bar">
+      <div class="fill" id="fillBar"></div>
+    </div>
+  </div>
+
+  <div id="fingerprint" class="hidden">
+    <div class="fp-circle"></div>
+    <p id="fpText">Fingerprint verification required</p>
+  </div>
+
+  <h2 id="countdown">⏳ 15</h2>
+</div>
+
+<!-- CONFETTI LAYER -->
+<div id="confettiLayer"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
